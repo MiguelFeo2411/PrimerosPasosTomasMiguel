@@ -17,4 +17,10 @@ function CourseList() {
     nombre: 'Logica Digital'
   }
   ]);
+  const agregarCurso = (event) => {
+    event.preventDefault();
+    if (!nuevoCurso.trim()) {
+      return;
+    }
+}
 }
