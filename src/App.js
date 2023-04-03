@@ -22,5 +22,19 @@ function CourseList() {
     if (!nuevoCurso.trim()) {
       return;
     }
-}
+  
+  const [nuevoCurso, setNuevoCurso]=useState(" ");
+    const [idNuevo, setNuevoId]=useState(" ");
+    const cursoNuevo = {
+      texto: nuevoCurso,
+    };
+    const nuevoId={
+      id: idNuevo
+    }
+    setCursos([...cursos, cursoNuevo]);
+    setIdNuevo([...cursos, nuevoId])
+    setNuevoCurso("");
+    setNuevoId("");
+  }
+
 }
