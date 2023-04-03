@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function CourseList() {
+  const[cursos, setCursos] =useState([
+  {
+    id:5100,
+    nombre: "Calculo Integral"
+  },
+  {
+    id:5101,
+    nombre: 'Calculo Vectorial'
+  },
+  {
+    id:1470,
+    nombre: 'Introduccion a React'
+  },
+  {
+    id:3745,
+    nombre: 'Logica Digital'
+  }
+  ]);
+  const [nuevoCurso, setNuevoCurso]=useState(" ");
+  const [idNuevo, setNuevoId]=useState(" ");
+  const cursoNuevo = {
+    id: Math.round(Math.random()*10000),
+    texto: nuevoCurso,
+  };
+  setCursos([...cursos, cursoNuevo]);
+  setIdNuevo([...cursos, idNuevo])
+  setNuevoCurso("");
+  setNuevoId("");
+
+
+
+  return(
+      <div> 
+      <h1>Lista de cursos</h1>
+        <input type='text' value={nuevoCurso}/>
+        <input type='text' value={idNuevo}/>
     </div>
-  );
-}
+    );
+};
 
-export default App;
+export default CourseList;
