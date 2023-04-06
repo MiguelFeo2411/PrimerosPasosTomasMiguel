@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+function CourseList() {
+  const[cursos, setCursos] =useState([
+  {
+    id:5100,
+    nombre: "Arte y geometria"
+  },
+  {
+    id:5101,
+    nombre: 'Calculo Vectorial'
+  },
+  {
+    id:1470,
+    nombre: 'Introduccion a React'
+  },
+  {
+    id:3745,
+    nombre: 'Logica Digital'
+  }
+  ]);
+  const agregarCurso = (event) => {
+    event.preventDefault();
+    if (!nuevoCurso.trim()) {
+      return;
+    }
+  
+  const [nuevoCurso, setNuevoCurso]=useState(" ");
+    const [idNuevo, setNuevoId]=useState(" ");
+    const cursoNuevo = {
+      texto: nuevoCurso,
+    };
+    const nuevoId={
+      id: idNuevo
+    }
+    setCursos([...cursos, cursoNuevo]);
+    setIdNuevo([...cursos, nuevoId])
+    setNuevoCurso("");
+    setNuevoId("");
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
 }
-
-export default App;
